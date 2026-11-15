@@ -211,6 +211,97 @@ body.intro.play .intro-in{opacity:1;transform:none;filter:none}
 .guide-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;font-size:18px;line-height:1;color:#7d8f80}
 .guide-x:hover{background:var(--sen-nhat);color:var(--sen)}
 
+/* ===== "Sen đang gõ…" ===== */
+.dots{display:inline-flex;gap:5px;align-items:center;height:1.45em;vertical-align:middle}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--sen);opacity:.35;animation:dot 1s ease-in-out infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-4px)}}
+
+/* ===== Hỏi tên ===== */
+.name-dlg{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:16px;background:rgba(30,74,43,.28);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .3s}
+.name-dlg.is-open{opacity:1}
+.name-card{position:relative;width:min(460px,100%);background:var(--nen);border-radius:30px;padding:28px 26px 22px;
+  box-shadow:0 0 0 1.5px var(--line),0 30px 60px -20px rgba(30,74,43,.45);display:flex;flex-direction:column;align-items:center;gap:12px;
+  transform:translateY(16px) scale(.97);transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.name-dlg.is-open .name-card{transform:none}
+.name-card>img{width:120px;margin-top:-80px;filter:drop-shadow(0 12px 14px rgba(30,74,43,.2))}
+.name-dlg.is-open .name-card>img{animation:bob 4.5s ease-in-out infinite;transform-origin:50% 100%}
+.name-card .bubble{max-width:none;width:100%;text-align:center;min-height:3.2em}
+.name-card .bubble::after{left:50%;top:-8px;bottom:auto;margin-left:-9px;transform:rotate(225deg)}
+.name-card form{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.name-btns{display:flex;gap:10px;flex-wrap:wrap}
+.name-btns .btn{flex:1 1 auto}
+.name-card .pc-note{text-align:center}
+
+/* ===== Nhận tem + bí mật nhỏ ===== */
+.reward{max-width:760px;margin:6px auto 30px;display:grid;grid-template-columns:auto 1fr;gap:10px 26px;align-items:center;
+  background:#fff;border-radius:28px;padding:22px 26px;box-shadow:0 0 0 1.5px var(--line),0 18px 40px -24px rgba(30,74,43,.35)}
+.reward-stamp{grid-row:span 2;display:flex;justify-content:center}
+.reward-stamp .stamp{width:136px}
+.reward-note{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.15;color:var(--c)}
+.secret{display:flex;gap:12px;align-items:flex-end}
+.secret img{width:76px;flex:none}
+.secret-label{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--c);margin:0 0 6px 4px}
+.secret-bubble{max-width:none;font-size:16px}
+.secret-bubble::after{left:-6px;bottom:18px;transform:rotate(135deg)}
+
+/* ===== Con tem (HTML) ===== */
+.stamp{--p:#E8548F;--p-soft:#FCE1EC;width:104px;aspect-ratio:5/6;flex:none;filter:drop-shadow(0 8px 12px rgba(30,74,43,.18))}
+.stamp-face{display:flex;flex-direction:column;width:100%;height:100%;background:#fff;padding:9px;
+  -webkit-mask:radial-gradient(circle 5px,#0000 96%,#000) -6px -6px/12px 12px round,linear-gradient(#000 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+          mask:radial-gradient(circle 5px,#0000 96%,#000) -6px -6px/12px 12px round,linear-gradient(#000 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat}
+.stamp-face img{flex:1;min-height:0;width:100%;object-fit:contain;background:var(--p-soft);border-radius:6px 6px 0 0;padding:6px 4px 0}
+.stamp-face b{display:block;background:var(--p);color:#fff;font-family:var(--display);font-weight:800;font-size:12.5px;line-height:1.05;
+  text-align:center;padding:6px 2px 5px;border-radius:0 0 6px 6px}
+.stamp:not(.is-earned){filter:none}
+.stamp:not(.is-earned) .stamp-face{background:transparent;-webkit-mask:none;mask:none;border:2px dashed #CFC3C8;border-radius:10px}
+.stamp:not(.is-earned) .stamp-face img{background:#F4EFF1;filter:grayscale(1);opacity:.4}
+.stamp:not(.is-earned) .stamp-face b{background:#E3DADE;color:#7d8f80}
+.stamp.is-new{animation:stampIn .9s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes stampIn{0%{opacity:0;transform:translateY(-70px) rotate(-28deg) scale(1.45)}
+  55%{opacity:1;transform:translateY(6px) rotate(-4deg) scale(.94)}75%{transform:translateY(-4px) rotate(-8deg) scale(1.02)}
+  100%{transform:rotate(-6deg)}}
+.stamps{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.stamp-item{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.stamp-item small{font-size:13px;font-weight:600;color:#56705B}
+.btn-sm{height:38px;padding:0 16px;font-size:14px}
+.btn-sm.btn-ghost:hover{box-shadow:0 0 0 1.5px var(--c);color:var(--c)}
+
+/* ===== Nút và bảng sổ tem ===== */
+.stamp-fab{position:fixed;z-index:45;right:20px;bottom:20px;display:flex;align-items:center;gap:8px;height:48px;padding:0 18px 0 8px;
+  border-radius:999px;background:#fff;font-weight:700;font-size:15px;color:var(--la-dam);
+  box-shadow:0 0 0 1.5px var(--line),0 14px 30px -12px rgba(30,74,43,.35);transition:bottom .4s cubic-bezier(.3,1.3,.5,1),transform .2s}
+.stamp-fab:hover{transform:translateY(-2px)}
+/* ẩn nút khi đang xem phần kết (sổ tem đã hiện sẵn ở đó) hoặc chân trang */
+body.fab-away .stamp-fab{opacity:0;pointer-events:none;transform:translateY(16px)}
+.stamp-fab{transition:bottom .4s cubic-bezier(.3,1.3,.5,1),transform .3s,opacity .3s}
+.stamp-fab-ico{width:32px;height:32px;border-radius:50%;background:var(--sen-nhat);position:relative}
+.stamp-fab-ico::before{content:"";position:absolute;inset:8px 9px;background:var(--sen);border-radius:2px;
+  -webkit-mask:radial-gradient(circle 2px,#0000 96%,#000) -2px -2px/5px 5px round;mask:radial-gradient(circle 2px,#0000 96%,#000) -2px -2px/5px 5px round}
+.stamp-fab.bump{animation:bump .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.18) rotate(-4deg)}100%{transform:scale(1)}}
+.stamp-panel{position:fixed;z-index:46;right:20px;bottom:80px;width:min(400px,calc(100vw - 32px));background:var(--nen);border-radius:26px;
+  padding:22px 22px 24px;box-shadow:0 0 0 1.5px var(--line),0 24px 50px -18px rgba(30,74,43,.45)}
+.stamp-panel h2{font-family:var(--display);font-weight:800;font-size:26px;line-height:1.1;padding-right:30px}
+.stamp-panel p{font-size:14.5px;color:#3F5B45;margin:6px 0 16px}
+.stamp-panel .guide-x{top:18px;right:14px;transform:none}
+.stamp-panel .stamps{gap:12px;justify-content:space-between}
+.stamp-panel .stamp{width:96px}
+
+/* ===== Mẫu postcard ===== */
+.tpls{display:flex;gap:10px;flex-wrap:wrap}
+.tpl{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:52px;padding:8px 18px;border-radius:16px;
+  background:#fff;box-shadow:0 0 0 1.5px var(--line);font-weight:600;text-align:left;transition:box-shadow .2s,background .2s}
+.tpl small{font-size:12.5px;font-weight:500;color:#7d8f80}
+.tpl[aria-checked="true"]{box-shadow:0 0 0 2.5px var(--c);background:var(--c-soft)}
+.tpl:disabled{cursor:not-allowed;opacity:.75;box-shadow:0 0 0 1.5px var(--line);background:repeating-linear-gradient(-45deg,#fff 0 8px,#FBF5F7 8px 16px)}
+#pcEnd{margin-top:6px}
+
+/* ===== Phần kết ===== */
+.again-sum{font-size:clamp(16px,1.3vw,18px);line-height:1.65;max-width:56ch;margin-top:12px;padding:14px 18px;background:var(--c-soft);border-radius:18px}
+.stamps-inline{justify-content:flex-start;margin-top:18px}
+
 /* ===== MÀN HÌNH NHỎ ===== */
 @media (max-width:900px){
   .story{grid-template-columns:1fr}
@@ -254,6 +345,20 @@ body.intro.play .intro-in{opacity:1;transform:none;filter:none}
   .again-choices{justify-content:center}
   .footer{flex-direction:column;text-align:center}
   .guide{right:10px;left:10px;bottom:10px;max-width:none}
+  /* nút sổ tem: né lời nhắc của Bé Sen (lời nhắc chiếm cả bề ngang dưới cùng) */
+  .stamp-fab{right:12px;bottom:12px;height:44px;font-size:14px;padding:0 14px 0 6px}
+  body.guide-on .stamp-fab{opacity:0;pointer-events:none;transform:translateY(16px)}   /* nhường chỗ cho lời nhắc */
+  .stamps-inline{gap:10px}
+  .stamps-inline .stamp{width:92px}
+  .stamp-panel{right:16px;left:16px;width:auto;bottom:68px}
+  .stamp-panel .stamp{width:100px}
+  .stamp-panel .stamps{justify-content:space-around}
+  .reward{grid-template-columns:1fr;justify-items:center;text-align:center;padding:20px 16px}
+  .reward-stamp{grid-row:auto}
+  .secret{text-align:left}
+  .secret img{width:60px}
+  .stamps-inline{justify-content:center}
+  .name-btns .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

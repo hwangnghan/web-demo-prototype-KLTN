@@ -28,3 +28,10 @@ CÓ BÉ SEN DẪN ĐƯỜNG – HƯỚNG DẪN NHANH (bản 1)
    Mỗi lần sửa file rồi đưa lên GitHub, mở index.html và đổi số phiên bản ?v=... ở 5 dòng
    nạp file (vd 20261115a -> 20261120a). Người xem sẽ luôn tải bản mới, không bị dính bản cũ.
    Sau khi đưa lên, chờ 1–3 phút rồi nhấn Ctrl+F5 để xem.
+
+7. SEN GỌI TÊN, SỔ TEM (trong content.js)
+   - {ten}: chỗ Sen gọi tên người dùng. Bấm "Bỏ qua" thì {ten} thành "bạn" (đầu câu tự viết hoa).
+   - hoiTen: câu hỏi tên. biMat (trong từng nhánh): bí mật nhỏ của Sen.
+   - soTem, tongKet, postcardDacBiet: sổ tem, câu tổng kết cuối hành trình, postcard đặc biệt.
+   - cumTu (trong từng thẻ): cụm từ dùng trong câu tổng kết, vd "ghé Gò Tháp".
+   Tên và tem chỉ giữ trong lần mở trang; tải lại trang là bắt đầu lại từ đầu.

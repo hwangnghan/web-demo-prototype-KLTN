@@ -6,8 +6,8 @@
 <title>Có Bé Sen dẫn đường</title>
 <meta name="description" content="Chọn một tâm trạng, khám phá một chút Đồng Tháp cùng Bé Sen.">
 <!-- Chống cache: mỗi lần cập nhật, đổi số phiên bản ?v=... ở 5 dòng nạp file bên dưới (vd 20261115a -> 20261120a) -->
-<link rel="stylesheet" href="fonts.css?v=20261115d">
-<link rel="stylesheet" href="style.css?v=20261115d">
+<link rel="stylesheet" href="fonts.css?v=20261115e">
+<link rel="stylesheet" href="style.css?v=20261115e">
 </head>
 <body class="intro">
 
@@ -34,7 +34,7 @@
     <div class="hero-copy">
       <h1 id="heroTitle" class="split"></h1>
       <p class="hero-sub intro-in" id="heroSub"></p>
-      <button class="btn btn-sen intro-in" data-go="mood" id="heroBtn"></button>
+      <button class="btn btn-sen intro-in" id="heroBtn"></button>
     </div>
     <figure class="hero-sen intro-in">
       <p class="bubble bubble-hero" id="heroBubble" aria-live="polite"></p>
@@ -74,6 +74,18 @@
       </div>
       <div class="tickets" id="tickets"></div>
       <p class="flip-count" id="flipCount" aria-live="polite"></p>
+      <!-- nhận tem + bí mật nhỏ của Sen (hiện khi lật hết thẻ) -->
+      <div class="reward" id="reward" hidden>
+        <div class="reward-stamp" id="rewardStamp"></div>
+        <p class="reward-note" id="rewardNote" aria-live="polite"></p>
+        <div class="secret" id="secret">
+          <img id="secretImg" alt="">
+          <div>
+            <p class="secret-label" id="secretLabel"></p>
+            <p class="bubble secret-bubble" id="secretText" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
       <div class="center"><button class="btn btn-sen" data-go="postcard" id="toPostcard"></button></div>
     </section>
 
@@ -81,9 +93,13 @@
       <div class="pc-form">
         <h2 class="h2" id="pcTitle"></h2>
         <p class="lead" id="pcLead"></p>
+        <fieldset class="field" id="pcTplBox">
+          <legend class="field-label" id="pcTplLabel"></legend>
+          <div class="tpls" id="pcTpls" role="radiogroup"></div>
+        </fieldset>
         <label class="field-label" for="pcName" id="pcNameLabel"></label>
         <input id="pcName" class="input" maxlength="30" autocomplete="off" spellcheck="false">
-        <fieldset class="field">
+        <fieldset class="field" id="pcPoseBox">
           <legend class="field-label" id="pcPoseLabel"></legend>
           <div class="poses" id="pcPoses" role="radiogroup"></div>
         </fieldset>
@@ -93,6 +109,7 @@
         </fieldset>
         <button class="btn btn-sen btn-lg" id="pcDownload"></button>
         <p class="pc-note" id="pcNote"></p>
+        <button class="btn btn-ghost btn-sm" id="pcEnd"></button>
       </div>
       <div class="pc-preview">
         <canvas id="pcCanvas" width="1080" height="1350" aria-label="Xem trước postcard"></canvas>
@@ -105,6 +122,8 @@
       <div>
         <h2 class="h2" id="againTitle"></h2>
         <p class="lead" id="againLead"></p>
+        <p class="again-sum" id="againSum"></p>
+        <div class="stamps stamps-inline" id="againStamps"></div>
         <div class="again-choices" id="againChoices"></div>
       </div>
     </section>
@@ -124,14 +143,41 @@
   </footer>
 </div>
 
+<!-- hỏi tên sau khi bấm "Đi cùng Sen" -->
+<div class="name-dlg" id="nameDlg" hidden>
+  <div class="name-card" role="dialog" aria-modal="true" aria-labelledby="nameQ">
+    <img id="nameSen" alt="">
+    <p class="bubble" id="nameQ"></p>
+    <form id="nameForm" autocomplete="off">
+      <input id="nameInput" class="input" autocomplete="off" spellcheck="false">
+      <div class="name-btns">
+        <button type="submit" class="btn btn-sen" id="nameOk"></button>
+        <button type="button" class="btn btn-ghost" id="nameSkip"></button>
+      </div>
+      <p class="pc-note" id="nameNote"></p>
+    </form>
+  </div>
+</div>
+
+<!-- sổ tem: nút ở góc + bảng -->
+<button class="stamp-fab" id="stampFab" hidden aria-expanded="false" aria-controls="stampPanel">
+  <span class="stamp-fab-ico" aria-hidden="true"></span><span id="stampFabText"></span>
+</button>
+<section class="stamp-panel" id="stampPanel" hidden aria-labelledby="stampTitle">
+  <button class="guide-x" id="stampClose">×</button>
+  <h2 id="stampTitle"></h2>
+  <p id="stampDesc"></p>
+  <div class="stamps" id="stampList"></div>
+</section>
+
 <aside class="guide" id="guide" hidden>
   <img id="guideImg" alt="">
   <p id="guideText" aria-live="polite"></p>
   <button class="guide-x" id="guideX" aria-label="Ẩn lời nhắc của Bé Sen">×</button>
 </aside>
 
-<script src="assets.js?v=20261115d"></script>
-<script src="content.js?v=20261115d"></script>
-<script src="app.js?v=20261115d"></script>
+<script src="assets.js?v=20261115e"></script>
+<script src="content.js?v=20261115e"></script>
+<script src="app.js?v=20261115e"></script>
 </body>
 </html>
