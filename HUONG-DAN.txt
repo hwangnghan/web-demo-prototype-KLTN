@@ -23,3 +23,8 @@ CÓ BÉ SEN DẪN ĐƯỜNG – HƯỚNG DẪN NHANH (bản 1)
 5. LƯU Ý
    Đừng xóa dấu phẩy, ngoặc kép, ngoặc nhọn trong content.js. Nếu trang trắng sau khi sửa,
    thường là do lỡ xóa một dấu ngoặc kép hoặc dấu phẩy.
+
+6. CẬP NHẬT LÊN WEB (chống cache)
+   Mỗi lần sửa file rồi đưa lên GitHub, mở index.html và đổi số phiên bản ?v=... ở 5 dòng
+   nạp file (vd 20261115a -> 20261120a). Người xem sẽ luôn tải bản mới, không bị dính bản cũ.
+   Sau khi đưa lên, chờ 1–3 phút rồi nhấn Ctrl+F5 để xem.

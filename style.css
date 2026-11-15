@@ -139,7 +139,7 @@ body.intro.play .intro-in{opacity:1;transform:none;filter:none}
 
 /* ===== SEN BẬT MÍ: thẻ vé lật ===== */
 .secrets{padding:12vh clamp(16px,5vw,80px) 12vh;background:var(--nen)}
-.tickets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1080px;margin:48px auto 0}
+.tickets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1080px;margin:48px auto 0}   /* 6 thẻ: tự xếp 3×2 */
 .ticket{position:relative;height:420px;perspective:1200px;text-align:left}
 .ticket-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.25,.5,1)}
 .ticket.is-flipped .ticket-in{transform:rotateY(180deg)}
@@ -160,6 +160,9 @@ body.intro.play .intro-in{opacity:1;transform:none;filter:none}
 .face-back p{font-size:15.5px;line-height:1.6;color:#2F4F37}
 .back-photo{flex:1;min-height:56px;border-radius:14px;background-size:cover;background-position:center;opacity:.9}
 .ticket:hover .face-front{filter:brightness(1.05)}
+/* khung tạm khi thẻ chưa có ảnh: "[ẢNH: ...]" */
+.ph-note{align-self:stretch;font-size:13px;font-weight:600;line-height:1.4;padding:10px 12px;border-radius:12px;
+  border:1.5px dashed rgba(255,255,255,.75);background:rgba(255,255,255,.14)}
 .flip-count{text-align:center;margin:26px 0 18px;font-weight:600;color:var(--c)}
 
 /* ===== POSTCARD ===== */
@@ -215,7 +218,7 @@ body.intro.play .intro-in{opacity:1;transform:none;filter:none}
   .story-sen img{width:150px;order:-1}
   .story-sen .bubble::after{left:-6px;bottom:22px}
   .tickets{grid-template-columns:1fr;max-width:480px}
-  .ticket{height:400px}
+  .ticket{height:auto;min-height:400px}
   .postcard{grid-template-columns:1fr}
   .pc-preview{order:-1}
 }

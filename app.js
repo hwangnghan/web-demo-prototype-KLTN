@@ -6,6 +6,9 @@
   var state = { nhanh: null, pose: 0, msg: 0, flipped: 0 };
 
   function src(key) { return A[key] || key; }               // tên hình -> ảnh nhúng, hoặc đường dẫn
+  // có ảnh thật không: ảnh nhúng trong assets.js, hoặc đường dẫn file (vd "images/anh-xoai.jpg")
+  function hasImg(key) { return !!key && (!!A[key] || /\.(jpe?g|png|webp)$/i.test(key)); }
+  function phText(b) { return "[ẢNH: " + (b.canAnh || b.tieuDe) + "]"; }   // khung tạm khi chưa có ảnh
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
@@ -222,15 +225,16 @@
     // thẻ bật mí
     var tk = $("#tickets"); tk.innerHTML = "";
     n.batMi.forEach(function (b) {
-      var t = el("button", "ticket");
+      var t = el("button", "ticket"), ok = hasImg(b.anh);
       t.setAttribute("aria-pressed", "false");
-      t.innerHTML = '<span class="ticket-in"><span class="face face-front' + (b.anh ? ' has-photo' : '') + '">' +
+      t.innerHTML = '<span class="ticket-in"><span class="face face-front' + (ok ? ' has-photo' : '') + '">' +
+        (ok ? '' : '<span class="ph-note">' + esc(phText(b)) + '</span>') +
         '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40C14 34 10 24 12 14c6 2 10 6 12 12 2-6 6-10 12-12 2 10-2 20-12 26Z" fill="#fff" fill-opacity=".9"/><path d="M24 40c-4-6-5-14-0-24 5 10 4 18 0 24Z" fill="#fff"/></svg>' +
         '<b>' + esc(b.tieuDe) + '</b><small>' + esc(C.batMi.nhacLat) + '</small></span>' +
-        '<span class="face face-back"><b>' + esc(b.tieuDe) + '</b><p>' + esc(b.noiDung) + '</p>' + (b.anh ? '<span class="back-photo"></span>' : '') + '</span></span>';
-      if (b.anh) t.querySelector(".face-front").style.backgroundImage =
+        '<span class="face face-back"><b>' + esc(b.tieuDe) + '</b><p>' + esc(b.noiDung) + '</p>' + (ok ? '<span class="back-photo"></span>' : '') + '</span></span>';
+      if (ok) t.querySelector(".face-front").style.backgroundImage =
         'linear-gradient(to top, rgba(20,30,20,.78), rgba(20,30,20,.05) 62%), url("' + src(b.anh) + '")';
-      if (b.anh) t.querySelector(".back-photo").style.backgroundImage = 'url("' + src(b.anh) + '")';
+      if (ok) t.querySelector(".back-photo").style.backgroundImage = 'url("' + src(b.anh) + '")';
       t.addEventListener("click", function () {
         var on = !t.classList.contains("is-flipped");
         t.classList.toggle("is-flipped", on); t.setAttribute("aria-pressed", on);
@@ -254,7 +258,7 @@
   }
   function updateFlips() {
     var n = current(), total = n.batMi.length;
-    $("#flipCount").textContent = state.flipped ? "Đã lật " + state.flipped + "/" + total : "";
+    $("#flipCount").textContent = state.flipped ? (C.batMi.daLat || "Đã lật") + " " + state.flipped + "/" + total : "";
     if (state.flipped === total) say(C.nhacNho.latHet, "sen-trieu-like");
   }
 
@@ -331,7 +335,13 @@
       ctx.textAlign = "left"; ctx.fillStyle = M.laDam;
       var greet = P.gui + " " + name + ",", maxGreet = W - left - sw - 90, fs = 60;
       ctx.font = '400 ' + fs + 'px "Pangolin", cursive';
-      while (ctx.measureText(greet).width > maxGreet && fs > 36) { fs -= 4; ctx.font = '400 ' + fs + 'px "Pangolin", cursive'; }
+      while (ctx.measureText(greet).width > maxGreet && fs > 30) { fs -= 2; ctx.font = '400 ' + fs + 'px "Pangolin", cursive'; }
+      // tên rất dài: cắt bớt và thêm "…" để không đè lên Bé Sen
+      if (ctx.measureText(greet).width > maxGreet) {
+        var cut = Array.from(name);
+        while (cut.length > 1 && ctx.measureText(P.gui + " " + cut.join("") + "…,").width > maxGreet) cut.pop();
+        greet = P.gui + " " + cut.join("").trim() + "…,";
+      }
       ctx.fillText(greet, left, y);
       // lời nhắn: nằm dưới Bé Sen nên dùng hết bề ngang, tự thu nhỏ chữ nếu dài
       var msgW = W - left * 2, ms = 48, lines, lh;

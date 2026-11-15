@@ -6,6 +6,8 @@
    - Tên hình (vd "sen-hi") lấy từ danh sách trong assets.js.
    - anh: null  nghĩa là đang dùng hình minh họa tạm.
    - chuThichAnh: chữ nhỏ hiện ở góc ảnh (để "" nếu không cần).
+   - Thẻ chưa có ảnh: để anh: null và ghi canAnh: "mô tả ảnh cần", trang sẽ hiện
+     khung tạm "[ẢNH: ...]". Ảnh cũng có thể là đường dẫn file, vd "images/anh-xoai.jpg".
    ============================================================= */
 
 window.CONTENT = {
@@ -183,6 +185,7 @@ window.CONTENT = {
     tieuDe: "Sen bật mí",
     moTa: "Chạm vào từng thẻ để lật nhé.",
     nhacLat: "Chạm để lật",
+    daLat: "Đã lật",        // bộ đếm hiện: "Đã lật 2/6" (số thẻ tự đếm theo từng nhánh)
     nutTiep: "Làm postcard gửi bạn",
     nutXemThem: "Sen bật mí thêm"
   },
