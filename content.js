@@ -61,7 +61,7 @@ window.CONTENT = {
       tieuDeChuyen: "Từ đồng sen đến biển Gò Công",
       anh: "anh-song-tien",
       chuThichAnh: "Sông Tiền",
-      anhPostcard: "anh-song-tien",
+      anhPostcard: "anh-dong-sen",
       moTaAnh: "",
       doanChuyen: [
         // KIỂM TRA: mốc hợp nhất tỉnh và phạm vi địa lý
@@ -204,7 +204,7 @@ window.CONTENT = {
     chanPhai: "Đồng Tháp",
     nutTai: "Tải postcard",
     riengTu: "Tên chỉ dùng để vẽ postcard ngay trên máy này, không gửi đi đâu cả.",
-    loiTai: "Chưa tải được. Bạn nhấn giữ (hoặc nhấp chuột phải) vào postcard để lưu ảnh nhé."
+    loiTai: "Bạn nhấn giữ (hoặc nhấp chuột phải) vào postcard rồi chọn lưu ảnh nhé."
   },
 
   /* ---------- Khám phá tiếp ---------- */
