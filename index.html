@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Có Bé Sen dẫn đường</title>
+<meta name="description" content="Chọn một tâm trạng, khám phá một chút Đồng Tháp cùng Bé Sen.">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="intro">
+
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+<div id="app">
+  <header class="topbar">
+    <a class="brand" href="#hero" aria-label="Về đầu trang">
+      <img id="logoTop" alt="Logo Đồng Tháp">
+      <span id="brandName"></span>
+    </a>
+    <div class="partners" aria-label="Trường Đại học Kinh tế TP. Hồ Chí Minh, Khoa Thiết kế truyền thông">
+      <img id="logoUeh" alt="Logo UEH University">
+      <span class="partners-line" aria-hidden="true"></span>
+      <img id="logoSmd" alt="Logo School of Media Design">
+    </div>
+  </header>
+
+  <!-- MỞ ĐẦU -->
+  <section id="hero" class="hero">
+    <div class="scene" id="heroScene" aria-hidden="true"></div>
+    <div class="glass-field" id="heroGlass" aria-hidden="true"></div>
+    <div class="petals" id="petals" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <h1 id="heroTitle" class="split"></h1>
+      <p class="hero-sub intro-in" id="heroSub"></p>
+      <button class="btn btn-sen intro-in" data-go="mood" id="heroBtn"></button>
+    </div>
+    <figure class="hero-sen intro-in">
+      <p class="bubble bubble-hero" id="heroBubble" aria-live="polite"></p>
+      <img id="heroSen" alt="Bé Sen cầm bảng chào mừng đến Đồng Tháp">
+    </figure>
+  </section>
+
+  <!-- CHỌN TÂM TRẠNG -->
+  <section id="mood" class="mood">
+    <div class="sec-head">
+      <h2 class="h2 split" id="moodTitle"></h2>
+      <p class="lead" id="moodLead"></p>
+    </div>
+    <div class="track" id="track"></div>
+  </section>
+
+  <!-- HÀNH TRÌNH (hiện sau khi chọn) -->
+  <div id="journey" hidden>
+    <section id="story" class="story">
+      <aside class="story-sen">
+        <p class="bubble" id="storyBubble" aria-live="polite"></p>
+        <img id="storySen" alt="">
+      </aside>
+      <article class="story-body">
+        <p class="pill" id="storyPill"></p>
+        <h2 class="h2" id="storyTitle"></h2>
+        <figure class="photo" id="storyPhoto"></figure>
+        <div class="story-text" id="storyText"></div>
+        <button class="btn btn-sen" data-go="secrets" id="toSecrets"></button>
+      </article>
+    </section>
+
+    <section id="secrets" class="secrets">
+      <div class="sec-head">
+        <h2 class="h2" id="secTitle"></h2>
+        <p class="lead" id="secLead"></p>
+      </div>
+      <div class="tickets" id="tickets"></div>
+      <p class="flip-count" id="flipCount" aria-live="polite"></p>
+      <div class="center"><button class="btn btn-sen" data-go="postcard" id="toPostcard"></button></div>
+    </section>
+
+    <section id="postcard" class="postcard">
+      <div class="pc-form">
+        <h2 class="h2" id="pcTitle"></h2>
+        <p class="lead" id="pcLead"></p>
+        <label class="field-label" for="pcName" id="pcNameLabel"></label>
+        <input id="pcName" class="input" maxlength="20" autocomplete="off" spellcheck="false">
+        <fieldset class="field">
+          <legend class="field-label" id="pcPoseLabel"></legend>
+          <div class="poses" id="pcPoses" role="radiogroup"></div>
+        </fieldset>
+        <fieldset class="field">
+          <legend class="field-label" id="pcMsgLabel"></legend>
+          <div class="msgs" id="pcMsgs" role="radiogroup"></div>
+        </fieldset>
+        <button class="btn btn-sen btn-lg" id="pcDownload"></button>
+        <p class="pc-note" id="pcNote"></p>
+      </div>
+      <div class="pc-preview">
+        <canvas id="pcCanvas" width="1080" height="1350" aria-label="Xem trước postcard"></canvas>
+        <img id="pcFallback" alt="Postcard của bạn" hidden>
+      </div>
+    </section>
+
+    <section id="again" class="again" hidden>
+      <img id="againSen" alt="">
+      <div>
+        <h2 class="h2" id="againTitle"></h2>
+        <p class="lead" id="againLead"></p>
+        <div class="again-choices" id="againChoices"></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <img id="logoFoot" alt="Logo Đồng Tháp">
+    <div>
+      <p id="footNote"></p>
+      <p class="foot-small" id="footSrc"></p>
+      <p class="foot-small" id="footDraft"></p>
+    </div>
+    <div class="foot-logos">
+      <img id="footUeh" alt="Logo UEH University">
+      <img id="footSmd" alt="Logo School of Media Design">
+    </div>
+  </footer>
+</div>
+
+<aside class="guide" id="guide" hidden>
+  <img id="guideImg" alt="">
+  <p id="guideText" aria-live="polite"></p>
+  <button class="guide-x" id="guideX" aria-label="Ẩn lời nhắc của Bé Sen">×</button>
+</aside>
+
+<script src="assets.js"></script>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

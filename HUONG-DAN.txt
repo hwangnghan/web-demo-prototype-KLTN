@@ -1,0 +1,25 @@
+CÓ BÉ SEN DẪN ĐƯỜNG – HƯỚNG DẪN NHANH (bản 1)
+
+1. CHẠY THỬ
+   Bấm đúp file index.html (mở bằng Chrome hoặc Edge). Không cần cài gì, không cần mạng.
+   Muốn xem như điện thoại: nhấn F12 > bấm biểu tượng điện thoại (Ctrl+Shift+M).
+
+2. SỬA CHỮ
+   Mở content.js bằng Notepad (hoặc VS Code). Chỉ sửa chữ nằm trong dấu ngoặc kép "...".
+   Lưu file rồi nhấn F5 trên trình duyệt.
+   Dòng có ghi // KIỂM TRA là thông tin về Đồng Tháp cần đối chiếu nguồn; điền nguồn vào nguon: "".
+
+3. ĐỔI MÀU
+   Phần "mau" ở đầu content.js. Mỗi nhánh có mauNhanh (màu đậm) và mauNhat (màu nhạt).
+
+4. CÁC FILE
+   index.html  – khung trang (không cần sửa)
+   content.js  – toàn bộ nội dung, màu sắc  ← sửa ở đây
+   style.css   – giao diện
+   app.js      – tương tác, vẽ postcard
+   assets.js   – hình Bé Sen, logo và ảnh địa danh đã nhúng sẵn (gửi ảnh mới để tạo lại file này)
+   fonts.css   – font tiếng Việt đã nhúng sẵn
+
+5. LƯU Ý
+   Đừng xóa dấu phẩy, ngoặc kép, ngoặc nhọn trong content.js. Nếu trang trắng sau khi sửa,
+   thường là do lỡ xóa một dấu ngoặc kép hoặc dấu phẩy.
