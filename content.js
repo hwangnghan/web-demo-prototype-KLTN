@@ -68,7 +68,7 @@ window.CONTENT = {
       doanChuyen: [
         // KIỂM TRA: mốc hợp nhất tỉnh và phạm vi địa lý
         "Bạn có biết Đồng Tháp bây giờ rộng hơn trước rất nhiều không? Từ giữa năm 2025, Đồng Tháp và Tiền Giang hợp nhất thành một tỉnh, vẫn mang tên Đồng Tháp. Từ những cánh đồng sen vùng Đồng Tháp Mười, xuôi theo sông Tiền, mình có thể đi đến tận biển Gò Công.",
-        "Mỗi khúc sông lại lưu giữ một câu chuyện: chuyện ông bà đi mở đất, chuyện những trận đánh trên sông, chuyện những ngôi nhà xưa vẫn còn đứng đó. Sen đã chọn ra ba câu chuyện, bạn lật thử từng thẻ nhé."
+        "Mỗi khúc sông lại lưu giữ một câu chuyện: chuyện ông bà đi mở đất, chuyện những trận đánh trên sông, chuyện những ngôi nhà xưa vẫn còn đứng đó. Sen đã chọn ra sáu câu chuyện, bạn lật thử từng thẻ nhé."
       ],
       batMi: [
         { tieuDe: "Khu di tích Nguyễn Sinh Sắc",   // KIỂM TRA
@@ -82,7 +82,19 @@ window.CONTENT = {
         { tieuDe: "Nhà cổ Huỳnh Thủy Lê",   // KIỂM TRA
           anh: "anh-huynh-thuy-le",
           noiDung: "Ở Sa Đéc có một ngôi nhà cổ mang mái ngói kiểu Á Đông nhưng mặt tiền lại đậm dáng vẻ phương Tây. Ngôi nhà gắn với mối tình được nhà văn Pháp Marguerite Duras kể lại trong tiểu thuyết Người tình. Sen thích đứng trước cổng, ngắm những hoa văn cũ kỹ và đoán xem ngôi nhà đã chứng kiến bao nhiêu câu chuyện.",
-          nguon: "" }
+          nguon: "" },
+        { tieuDe: "Miễu Ông Bà Chủ Chợ",   // KIỂM TRA
+          anh: "images/anh-mieu-ong-ba.webp",
+          noiDung: "Bạn có biết tên Cao Lãnh từ đâu mà có không? Ngày xưa, ông Đỗ Công Tường, tục danh Lãnh, cùng vợ lập chợ ở làng Mỹ Trà, người dân gọi là chợ ông Câu Lãnh. Năm 1820, dịch bệnh hoành hành, hai ông bà tìm thuốc cứu người rồi lần lượt qua đời. Người dân thương nhớ, lập miếu thờ đến tận hôm nay. Nghe chuyện này, lòng Sen ấm áp lạ thường.",
+          nguon: "Báo Pháp luật: baophapluat.vn/nguon-goc-ten-goi-cao-lanh-va-chuyen-vo-chong-chu-cho-duoc-dan-ton-tho-post425248.html; Tuổi Trẻ: tuoitre.vn/le-gio-ong-ba-do-cong-tuong-thu-hut-hang-ngan-nguoi-dan-ve-dong-thap-2024071310522243.htm" },
+        { tieuDe: "Khu di tích Gò Tháp",   // KIỂM TRA
+          anh: "images/anh-go-thap.webp",
+          noiDung: "Giữa đồng nước Tháp Mười có một gò đất nhỏ, nhưng lòng đất nơi đây lại cất giữ dấu tích của văn hóa Óc Eo, phát triển từ khoảng thế kỷ I đến thế kỷ VII. Các nhà khảo cổ đã tìm thấy nền móng đền tháp cổ cùng nhiều hiện vật quý. Năm 2012, Gò Tháp được xếp hạng di tích quốc gia đặc biệt. Đứng giữa gò, Sen cứ ngỡ mình đang trò chuyện với người xưa.",
+          nguon: "Nhân Dân: nhandan.vn/post-838991.html; Vietnam Airlines: vietnamairlines.com/at/vi/plan-book/travel/travel-guide/khu-di-tich-go-thap" },
+        { tieuDe: "Chùa Vĩnh Tràng",   // KIỂM TRA
+          anh: "images/anh-vinh-trang.webp",
+          noiDung: "Chùa Vĩnh Tràng ở Mỹ Tho được dựng từ đầu thế kỷ XIX. Điều làm Sen thích thú là kiến trúc giao thoa Á – Âu: bên trong giữ nét chùa Việt truyền thống, còn mặt tiền lại có vòm cửa và hàng cột kiểu phương Tây. Cổng tam quan được khảm những mảnh sành sứ nhiều màu, lấp lánh dưới nắng. Bước vào sân chùa, Sen tự nhiên đi chậm lại, lòng nhẹ tênh.",
+          nguon: "VietnamPlus: vietnamplus.vn/kham-pha-chua-vinh-trang-tuyet-tac-kien-truc-giao-thoa-a-au-o-nam-bo-post1141699.vnp" }
       ],
       loiNhan: [
         "Có vài câu chuyện Sen để dành, đợi bạn về Đồng Tháp rồi mình ngồi kể nhau nghe.",
@@ -112,7 +124,7 @@ window.CONTENT = {
       moTaAnh: "",
       doanChuyen: [
         "Ở miền sông nước, món ngon thường bắt đầu từ những thứ rất gần gũi: con cá dưới đồng, trái cây trong vườn, bông sen ngoài đầm. Người Đồng Tháp nấu nướng không cầu kỳ, nhưng ăn vào là cảm nhận được vị ngọt thanh, đậm đà rất riêng của miền Tây.",
-        "Đồng Tháp nay có thêm những miệt vườn trù phú ven sông Tiền, nên mâm cơm càng thêm phong phú. Sen đã chọn ba món mình thích nhất, mời bạn nếm thử bằng mắt trước nhé."
+        "Đồng Tháp nay có thêm những miệt vườn trù phú ven sông Tiền, nên mâm cơm càng thêm phong phú. Sen đã chọn sáu món mình thích nhất, mời bạn nếm thử bằng mắt trước nhé."
       ],
       batMi: [
         { tieuDe: "Hủ tiếu Mỹ Tho",                    // KIỂM TRA
@@ -126,7 +138,19 @@ window.CONTENT = {
         { tieuDe: "Món ngon từ sen",                   // KIỂM TRA
           anh: "anh-mon-sen",
           noiDung: "Ở xứ sen, từ hạt, ngó đến lá sen đều có thể vào bếp. Gỏi ngó sen giòn mát, chè hạt sen bùi bùi, cơm gói lá sen thơm lừng. Nghe kể đến đây, Sen vừa tự hào vừa hơi ngại, vì họ hàng nhà Sen được mọi người khen ngon nhiều quá!",
-          nguon: "" }
+          nguon: "" },
+        { tieuDe: "Hủ tiếu Sa Đéc",   // KIỂM TRA
+          anh: "images/anh-hu-tieu-sa-dec.webp",
+          noiDung: "Ăn hủ tiếu Mỹ Tho rồi, bạn thử thêm hủ tiếu Sa Đéc nhé! Sợi hủ tiếu ở đây to hơn, màu trắng sữa, dai mềm và thơm vị gạo. Nước dùng ninh từ xương heo, trong và ngọt thanh. Còn hủ tiếu khô thì có nước xốt vàng sệt, trộn đều rồi ăn kèm chén súp nóng. Mỗi lần ăn, Sen đều húp đến giọt cuối cùng mới chịu đứng dậy.",
+          nguon: "Tuổi Trẻ: tuoitre.vn/am-thuc/hu-tieu-sa-dec-972099.htm" },
+        { tieuDe: "Bánh phồng tôm Sa Giang",   // KIỂM TRA
+          anh: "images/anh-phong-tom.webp",
+          noiDung: "Tiếng bánh phồng tôm nở lách tách trong chảo là âm thanh Sen mê nhất! Bánh phồng tôm Sa Giang ra đời năm 1960 ở Sa Đéc và từng đoạt Huy chương Bạc tại hội chợ Osaka, Nhật Bản năm 1970. Bây giờ, những miếng bánh giòn tan từ quê Sen đã có mặt ở hơn 40 quốc gia và vùng lãnh thổ. Nghĩ đến bạn bè khắp nơi cùng thưởng thức, Sen thấy tự hào lắm.",
+          nguon: "Tạp chí Công Thương: tapchicongthuong.vn/sa-giang--65-nam-kien-tao-gia-tri-thuc-pham-viet-trong-tien-trinh-hoi-nhap-405587.htm" },
+        { tieuDe: "Xoài Cao Lãnh",   // KIỂM TRA
+          anh: "images/anh-xoai-cao-lanh.webp",
+          noiDung: "Mùa xoài về, vườn ở Cao Lãnh treo đầy những trái xoài được bao giấy cẩn thận, nhờ vậy vỏ xoài sáng bóng và đẹp mắt. Nổi tiếng nhất là giống xoài cát Chu. Năm 2019, xoài Cao Lãnh được cấp chỉ dẫn địa lý, giống như một tấm giấy khai sinh cho trái ngon quê nhà. Cắn một miếng xoài chín, Sen thấy cả mùa hè ngọt lịm tan trong miệng.",
+          nguon: "VnBusiness: vnbusiness.vn/xoai-cao-lanh-duoc-bao-ho-chi-dan-dia-ly.html (Quyết định 5849/QĐ-SHTT ngày 26/11/2019)" }
       ],
       loiNhan: [
         "Ước gì bạn đang ở đây, Sen sẽ rủ bạn đi ăn một bữa thật ngon. Đồng Tháp còn nhiều món Sen muốn bạn thử lắm.",
@@ -156,7 +180,7 @@ window.CONTENT = {
       moTaAnh: "",
       doanChuyen: [
         "Đồng Tháp đẹp một cách hiền hòa. Sáng sớm có sương mỏng trên đồng sen, buổi trưa nắng vàng trải trên ruộng lúa, chiều xuống dòng sông lấp lánh. Người dân nơi đây sống chậm, hay cười và luôn niềm nở với khách phương xa.",
-        "Đi một vòng, bạn sẽ thấy vẻ đẹp không chỉ nằm ở cảnh vật mà còn ở tình người. Sen đã để dành ba khung cảnh đẹp nhất cho bạn đây."
+        "Đi một vòng, bạn sẽ thấy vẻ đẹp không chỉ nằm ở cảnh vật mà còn ở tình người. Sen đã để dành sáu khung cảnh đẹp nhất cho bạn đây."
       ],
       batMi: [
         { tieuDe: "Đồng sen Tháp Mười",      // KIỂM TRA
@@ -170,7 +194,19 @@ window.CONTENT = {
         { tieuDe: "Vườn quốc gia Tràm Chim", // KIỂM TRA
           anh: "anh-tram-chim",
           noiDung: "Ở Tràm Chim, đồng nước mênh mông và rừng tràm xanh mát là nhà của rất nhiều loài chim. Nếu may mắn, bạn còn có thể gặp sếu đầu đỏ, loài chim quý hiếm mà ai cũng mong được thấy một lần. Sen nhắc nhỏ: đi nhẹ, nói khẽ để các bạn chim không giật mình nhé.",
-          nguon: "" }
+          nguon: "" },
+        { tieuDe: "Cù lao Thới Sơn",   // KIỂM TRA
+          anh: "images/anh-thoi-son.webp",
+          noiDung: "Giữa sông Tiền có bốn cồn mang tên Long, Lân, Quy, Phụng, và Thới Sơn là cồn lớn nhất. Ở đây, bạn ngồi xuồng ba lá len qua những con rạch nhỏ, nghe mái chèo khua nhẹ trên mặt nước. Ghé vào vườn, bạn được thưởng trái cây và nghe đờn ca tài tử do chính người dân trên cồn biểu diễn. Sen thích nhất lúc tiếng đàn vang lên, mọi thứ như chậm lại.",
+          nguon: "VnExpress: vnexpress.net/cam-nang-du-lich-con-thoi-son-5103568.html" },
+        { tieuDe: "Chợ nổi Cái Bè",   // KIỂM TRA
+          anh: "images/anh-cho-noi-cai-be.webp",
+          noiDung: "Trời còn tờ mờ sáng, chợ nổi Cái Bè trên sông Tiền đã rộn ràng ghe xuồng. Muốn biết ghe nào bán gì, bạn chỉ cần nhìn lên cây bẹo, cây sào cao treo sẵn trái cây, rau củ. Chợ đã có từ thế kỷ XVIII và họp đông nhất vào sáng sớm. Sen khuyên bạn dậy sớm một chút, ngồi trên xuồng, nhìn nắng lên dần trên mặt sông. Bình yên lắm.",
+          nguon: "VnExpress: vnexpress.net/5-cho-noi-doc-dao-mien-tay-2858525.html; RFA (chợ đang thưa dần): rfa.org/vietnamese/in_depth/memory-of-floating-market-01032019102910.html" },
+        { tieuDe: "Biển Tân Thành",   // KIỂM TRA
+          anh: "images/anh-bien-tan-thanh.webp",
+          noiDung: "Biển Tân Thành ở Gò Công không có bãi cát trắng mà là bãi bùn phù sa mềm mịn, nên không hợp để tắm biển. Bù lại, bạn có thể cầm cây cào, đeo giỏ, cùng người dân đi cào nghêu. Chiều xuống, cả mặt biển ửng màu cam hồng của hoàng hôn. Sen thích ngồi lặng yên, nghe gió biển mằn mặn thổi qua. Những lúc ấy, mọi lo toan như trôi đi thật xa.",
+          nguon: "Vietnam Airlines: vietnamairlines.com/la/vi/plan-book/travel/travel-guide/khu-du-lich-bien-tan-thanh; MIA.vn: mia.vn/cam-nang-du-lich/bien-tan-thanh-tien-giang-voi-net-thu-hut-an-tuong-5137" }
       ],
       loiNhan: [
         "Ước gì bạn ở đây, ngồi cạnh Sen một lúc, ngắm đồng sen và nghe gió thổi qua.",
