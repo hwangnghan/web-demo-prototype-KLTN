@@ -127,7 +127,7 @@
           if (typing.get(node) !== token) return res();
           out.textContent = chars.slice(0, ++i).join("");
           if (i < chars.length) setTimeout(step, chars[i - 1] === "," || chars[i - 1] === "." ? 160 : 24);
-          else { node.lastChild.remove(); res(); }
+          else { if (node.lastChild) node.lastChild.remove(); res(); }
         })();
       }, 600 + Math.round(Math.random() * 300));
     });
@@ -277,10 +277,11 @@
   /* ---------- chọn một nhánh ---------- */
   function current() { return C.nhanh.filter(function (n) { return n.id === state.nhanh; })[0]; }
   function choose(id) {
-    state.nhanh = id; state.flipped = 0; state.msg = 0;
+    state.nhanh = id; state.msg = 0;
     var n = current(), J = $("#journey");
     if (S.visited.indexOf(id) < 0) S.visited.push(id);
     if (!S.flips[id]) S.flips[id] = [];
+    state.flipped = S.flips[id].length;                                // giữ tiến độ khi quay lại nhánh
     closeStamps(); $("#stampFab").hidden = false; $("#reward").hidden = true;
     if (ten && !$("#pcName").value.trim()) $("#pcName").value = ten;
     J.hidden = false;
@@ -313,12 +314,15 @@
         if (on && !t.dataset.seen) {
           t.dataset.seen = 1; state.flipped++;
           if (S.flips[n.id].indexOf(bi) < 0) S.flips[n.id].push(bi);   // nhớ thẻ đã lật để tổng kết
-          updateFlips();
+          updateFlips(true);
         }
       });
+      if (S.flips[n.id].indexOf(bi) >= 0) {                              // thẻ đã lật ở lần trước
+        t.dataset.seen = 1; t.classList.add("is-flipped"); t.setAttribute("aria-pressed", "true");
+      }
       tk.appendChild(t);
     });
-    updateFlips();
+    updateFlips(false);
     // postcard
     buildTpls(); buildPostcardChoices(); drawPostcard();
     $("#again").hidden = true;
@@ -332,14 +336,16 @@
       }, reduce ? 0 : 450);
     });
   }
-  function updateFlips() {
-    var n = current(), total = n.batMi.length;
-    $("#flipCount").textContent = state.flipped ? (C.batMi.daLat || "Đã lật") + " " + state.flipped + "/" + total : "";
-    if (state.flipped === total) complete();
+  function updateFlips(fromClick) {
+    var n = current(), total = n.batMi.length, left = total - state.flipped;
+    var t = state.flipped ? (C.batMi.daLat || "Đã lật") + " " + state.flipped + "/" + total : "";
+    if (state.flipped && left > 0 && !S.stamps[n.id] && C.batMi.conLai) t += " · " + T(C.batMi.conLai, { n: left, tem: n.nhanNgan });
+    $("#flipCount").textContent = t;
+    if (state.flipped === total) complete(fromClick);
   }
 
   /* ---------- lật hết thẻ: nhận tem + bí mật nhỏ ---------- */
-  function complete() {
+  function complete(fromClick) {
     var n = current(), first = !S.stamps[n.id];
     if (first) S.stamps[n.id] = true;                                  // không nhận tem trùng
     $("#reward").hidden = false;
@@ -347,14 +353,19 @@
     box.innerHTML = ""; if (first) st.classList.add("is-new"); box.appendChild(st);
     $("#rewardNote").textContent = T(first ? ST.vuaNhan : ST.daCo, { tem: n.nhanNgan });
     popImg($("#secretImg"), n.biMat.hinh);
-    $("#secretText").textContent = "";
+    typing.set($("#secretText"), {}); $("#secretText").textContent = "";   // dừng lần gõ trước
     setTimeout(function () { type($("#secretText"), T(n.biMat.loi)); }, reduce ? 0 : 900);
     updateStamps(first);
-    if (!first) return say(C.nhacNho.latHet, "sen-trieu-like");
+    $("#rewardGo").hidden = !allStamps(); $("#rewardGo").textContent = C.ketThuc.nutDacBiet;
+    if (first && allStamps()) state.tpl = "dacbiet";                   // vừa đủ 3 tem: chọn sẵn mẫu đặc biệt
+    if (!first) { buildTpls(); buildPostcardChoices(); drawPostcard(); if (fromClick) say(C.nhacNho.latHet, "sen-trieu-like"); return; }
     if (allStamps()) say(T(ST.duTem), ST.hinhDuTem, 2);
     else say(T(ST.nhanTem, { tem: n.nhanNgan }), ST.hinhNhanTem, 2);
-    buildTpls();
+    buildTpls(); buildPostcardChoices(); drawPostcard();
   }
+  function goSpecial() { closeStamps(); setTpl("dacbiet"); go("postcard"); }
+  $("#rewardGo").addEventListener("click", goSpecial);
+  $("#stampGo").addEventListener("click", goSpecial);
 
   /* ---------- sổ tem ---------- */
   function stampEl(n, earned) {
@@ -382,6 +393,7 @@
   function updateStamps(bump) {
     $("#stampFabText").textContent = ST.nut + " " + stampCount() + "/" + C.nhanh.length;
     renderBook($("#stampList"), true);
+    $("#stampGo").hidden = !allStamps() || !state.nhanh; $("#stampGo").textContent = C.ketThuc.nutDacBiet;
     if (bump && !reduce) { fab.classList.remove("bump"); void fab.offsetWidth; fab.classList.add("bump"); }
   }
   function openStamps() {
@@ -643,7 +655,7 @@
     var box = $("#againChoices"); box.innerHTML = "";
     if (left === 0) {
       var sp = el("button", "btn btn-sen"); sp.textContent = K.nutDacBiet;
-      sp.addEventListener("click", function () { setTpl("dacbiet"); go("postcard"); });
+      sp.addEventListener("click", goSpecial);
       box.appendChild(sp);
     }
     C.nhanh.forEach(function (n) {                                       // nút sang các nhánh chưa có tem

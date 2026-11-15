@@ -258,6 +258,7 @@ window.CONTENT = {
     moTa: "Chạm vào từng thẻ để lật nhé.",
     nhacLat: "Chạm để lật",
     daLat: "Đã lật",        // bộ đếm hiện: "Đã lật 2/6" (số thẻ tự đếm theo từng nhánh)
+    conLai: "còn {n} thẻ nữa là nhận tem “{tem}”",   // hiện sau bộ đếm khi chưa có tem của nhánh
     nutTiep: "Làm postcard gửi bạn",
     nutXemThem: "Sen bật mí thêm"
   },

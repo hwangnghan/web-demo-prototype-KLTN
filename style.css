@@ -237,10 +237,12 @@ body.intro.play .intro-in{opacity:1;transform:none;filter:none}
 /* ===== Nhận tem + bí mật nhỏ ===== */
 .reward{max-width:760px;margin:6px auto 30px;display:grid;grid-template-columns:auto 1fr;gap:10px 26px;align-items:center;
   background:#fff;border-radius:28px;padding:22px 26px;box-shadow:0 0 0 1.5px var(--line),0 18px 40px -24px rgba(30,74,43,.35)}
-.reward-stamp{grid-row:span 2;display:flex;justify-content:center}
+.reward-stamp{grid-row:span 3;display:flex;justify-content:center}
 .reward-stamp .stamp{width:136px}
 .reward-note{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.15;color:var(--c)}
 .secret{display:flex;gap:12px;align-items:flex-end}
+.reward-go{justify-self:start}
+.stamp-go{margin-top:16px;width:100%}
 .secret img{width:76px;flex:none}
 .secret-label{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--c);margin:0 0 6px 4px}
 .secret-bubble{max-width:none;font-size:16px}
@@ -355,6 +357,7 @@ body.fab-away .stamp-fab{opacity:0;pointer-events:none;transform:translateY(16px
   .stamp-panel .stamps{justify-content:space-around}
   .reward{grid-template-columns:1fr;justify-items:center;text-align:center;padding:20px 16px}
   .reward-stamp{grid-row:auto}
+  .reward-go{justify-self:center}
   .secret{text-align:left}
   .secret img{width:60px}
   .stamps-inline{justify-content:center}
