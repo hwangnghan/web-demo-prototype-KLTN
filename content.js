@@ -364,9 +364,12 @@ window.CONTENT = {
     anh: "anh-dong-sen",
     tieuDe: "Đã đi trọn 3 góc Đồng Tháp cùng Sen",
     loiNhan: [
-      "Ba góc Đồng Tháp, bạn đi trọn hết rồi đó. Nhưng còn nhiều thứ hay lắm, phải về tận nơi mới thấy nha!",
-      "Cảm ơn bạn đã nghe Sen kể chuyện, ăn cùng Sen, ngồi cùng Sen thật chậm. Hẹn gặp bạn ở Đồng Tháp nha!",
-      "Sổ tem đầy rồi, mà Sen thì vẫn muốn đi chơi tiếp. Về Đồng Tháp đi, Sen dẫn bạn đi nha!"
+      // 1. Lời nhắn khám phá
+      "Bạn đã cùng Sen đi qua ba góc nhỏ của Đồng Tháp rồi đó! Nhưng mà, Đồng Tháp còn nhiều điều xinh xắn lắm. Nhất định phải ghé thăm tận nơi nha!",
+      // 2. Lời nhắn cảm ơn
+      "Cảm ơn bạn đã dành chút thời gian bên Sen, nghe Sen kể chuyện, cùng Sen ăn ngon và ngắm cảnh. Hôm nay vui lắm đó! Hẹn gặp lại bạn ở Đồng Tháp nha!",
+      // 3. Lời nhắn lưu luyến
+      "Sổ tem đã đầy, nhưng hành trình của chúng mình đâu cần dừng lại ở đây! Lần sau về Đồng Tháp, Sen lại dẫn bạn đi chơi tiếp nhé. Hứa đó!"
     ]
   },
 
