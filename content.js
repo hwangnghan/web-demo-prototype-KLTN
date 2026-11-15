@@ -89,8 +89,8 @@ window.CONTENT = {
           nguon: "Báo Pháp luật: baophapluat.vn/nguon-goc-ten-goi-cao-lanh-va-chuyen-vo-chong-chu-cho-duoc-dan-ton-tho-post425248.html; Tuổi Trẻ: tuoitre.vn/le-gio-ong-ba-do-cong-tuong-thu-hut-hang-ngan-nguoi-dan-ve-dong-thap-2024071310522243.htm" },
         { tieuDe: "Khu di tích Gò Tháp",   // KIỂM TRA
           anh: "images/anh-go-thap.webp",
-          noiDung: "Giữa đồng nước Tháp Mười có một gò đất nhỏ, nhưng lòng đất nơi đây lại cất giữ dấu tích của văn hóa Óc Eo, phát triển từ khoảng thế kỷ I đến thế kỷ VII. Các nhà khảo cổ đã tìm thấy nền móng đền tháp cổ cùng nhiều hiện vật quý. Năm 2012, Gò Tháp được xếp hạng di tích quốc gia đặc biệt. Đứng giữa gò, Sen cứ ngỡ mình đang trò chuyện với người xưa.",
-          nguon: "Nhân Dân: nhandan.vn/post-838991.html; Vietnam Airlines: vietnamairlines.com/at/vi/plan-book/travel/travel-guide/khu-di-tich-go-thap" },
+          noiDung: "Gò đất nhỏ giữa đồng nước Tháp Mười này giữ đến hai lớp chuyện xưa. Lòng đất còn lưu dấu văn hóa Óc Eo, từ khoảng thế kỷ I đến thế kỷ VII. Những năm 1860, nơi đây lại là căn cứ chống Pháp của Thiên Hộ Dương và Đốc binh Kiều. Năm 2012, Gò Tháp được xếp hạng di tích quốc gia đặc biệt. Đứng trước đền thờ hai vị anh hùng, Sen bỗng thấy lòng mình lặng lại.",
+          nguon: "Nhân Dân: nhandan.vn/post-838991.html; Vietnam Airlines: vietnamairlines.com/at/vi/plan-book/travel/travel-guide/khu-di-tich-go-thap; Thiên Hộ Dương, Đốc binh Kiều: nhandan.vn/net-que-o-khu-di-tich-quoc-gia-dac-biet-go-thap-post789378.html, baovanhoa.vn/van-hoa/dong-thap-don-nhan-hai-di-san-van-hoa-phi-vat-the-quoc-gia-194617.html" },
         { tieuDe: "Chùa Vĩnh Tràng",   // KIỂM TRA
           anh: "images/anh-vinh-trang.webp",
           noiDung: "Chùa Vĩnh Tràng ở Mỹ Tho được dựng từ đầu thế kỷ XIX. Điều làm Sen thích thú là kiến trúc giao thoa Á – Âu: bên trong giữ nét chùa Việt truyền thống, còn mặt tiền lại có vòm cửa và hàng cột kiểu phương Tây. Cổng tam quan được khảm những mảnh sành sứ nhiều màu, lấp lánh dưới nắng. Bước vào sân chùa, Sen tự nhiên đi chậm lại, lòng nhẹ tênh.",
