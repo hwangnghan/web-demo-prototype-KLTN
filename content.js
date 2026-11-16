@@ -388,7 +388,6 @@ window.CONTENT = {
   /* ---------- Chân trang ---------- */
   chanTrang: {
     ghiChu: "Prototype minh họa hàm ý nghiên cứu về nhân cách hóa thương hiệu điểm đến qua mascot Bé Sen, thuộc khóa luận tốt nghiệp chuyên ngành Thiết kế truyền thông.",
-    nguon: "Hình Bé Sen và logo thuộc thương hiệu điểm đến Đồng Tháp. Ảnh minh họa sưu tầm từ Internet, chỉ sử dụng cho mục đích học tập.",
-    banNhap: "Bản nháp: nội dung đang được kiểm chứng."
+    nguon: "Hình Bé Sen và logo thuộc thương hiệu điểm đến Đồng Tháp. Ảnh minh họa sưu tầm từ Internet, chỉ sử dụng cho mục đích học tập."
   }
 };

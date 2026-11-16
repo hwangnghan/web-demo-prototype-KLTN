@@ -191,7 +191,7 @@
   $("#secretLabel").textContent = C.biMatChung.nhan;
   $("#stampTitle").textContent = ST.tieuDe; $("#stampDesc").textContent = ST.moTa; $("#stampClose").setAttribute("aria-label", ST.dong);
   $("#pcTplLabel").textContent = D.nhanMau; $("#pcEnd").textContent = C.ketThuc.nutKetThuc;
-  $("#footNote").textContent = C.chanTrang.ghiChu; $("#footSrc").textContent = C.chanTrang.nguon; $("#footDraft").textContent = C.chanTrang.banNhap;
+  $("#footNote").textContent = C.chanTrang.ghiChu; $("#footSrc").textContent = C.chanTrang.nguon;
 
   // ô kính mờ và cánh sen rơi ở phần mở đầu
   var mobile = innerWidth <= 760;
